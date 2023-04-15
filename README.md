@@ -1,2 +1,2 @@
-# manav.github.io
+# PORTFOLIO
 Manav Sharma's portfolio, made with ❤️
