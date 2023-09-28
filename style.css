@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,600&display=swap");
 
 * {
     box-sizing: border-box;
@@ -27,7 +27,7 @@ li {
 
 #main {
     position: relative;
-    width: 100%;
+    width: 100vw;
 }
 
 #base_black {
@@ -72,6 +72,7 @@ li {
     text-transform: lowercase;
     font-size: 24px;
     font-family: "EB Garamond", serif;
+    font-weight: 600;
 }
 
 #base_black h1 {
@@ -175,6 +176,7 @@ li {
 }
 
 .item1 {
+    font-family: "EB Garamond", serif;
     color: rgb(224, 201, 170);
     position: absolute;
 }
@@ -187,9 +189,9 @@ li {
     width: 100%;
 }
 
-.links {
+/* .links {
     background-color: crimson;
-}
+} */
 
 .right-about {
     text-align: end;
@@ -222,9 +224,8 @@ li {
 }
 
 .accent {
-    font-family: "EB Garamond";
+    font-family: "EB Garamond", serif;
     color: rgb(201, 117, 243);
-    font-style: italic;
 }
 
 .regular {
@@ -265,6 +266,7 @@ section {
 }
 
 .item2 {
+    font-family: "EB Garamond", serif;
     color: rgb(224, 201, 170);
     position: absolute;
 }
@@ -275,9 +277,11 @@ section {
     user-select: none;
     font-style: italic;
     font-size: 4vw;
+    background-color: #e65c6c;
 }
 
 .item3 {
+    font-family: "EB Garamond", serif;
     color: rgb(224, 201, 170);
     position: absolute;
 }
@@ -294,6 +298,7 @@ section {
 .link {
     display: flex;
     align-items: center;
+    margin: 0 2vw 0 2vw;
     justify-content: space-between;
     height: 12vh;
 }
@@ -391,12 +396,12 @@ footer {
     font-weight: 300;
 }
 
-.scroll {
+/* .scroll {
     text-align: center;
     min-height: 200vh;
     font-size: 3vw;
     color: white;
-}
+} */
 
 .scroll h1 {
     padding-top: 190vh;
@@ -435,91 +440,4 @@ footer {
     pointer-events: none;
     /* transition: 0.08s; */
     z-index: 10;
-}
-
-@media (max-width: 500px) {
-    .inner-cursor {
-        display: none;
-    }
-    .outer-cursor {
-        display: none;
-    }
-    #home #nav {
-        height: 100px;
-    }
-    #nav a {
-        font-size: 14px;
-    }
-    #home {
-        min-height: max-content;
-        margin-top: -40px;
-    }
-    .row h1 {
-        font-size: 12vw;
-    }
-    .all-rows .photo {
-        margin-left: 80vw;
-        width: 30vw;
-        height: 35vw;
-        margin-top: -38vw;
-    }
-    .row h5 {
-        font-size: 14px;
-    }
-    #loop-container1 {
-        margin-top: 20px;
-    }
-    #about {
-        margin-top: 50px;
-    }
-    .left-about {
-        width: 65vw;
-    }
-    .left-about p {
-        margin-top: 1.2vw;
-        font-size: 12px;
-        color: white;
-        font-weight: 300;
-    }
-    #loop-container2 {
-        margin-top: 20px;
-    }
-    .row-work {
-        margin-top: 50px;
-    }
-    .link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 6vh;
-    }
-    .row-work ul a {
-        border-bottom: 1px solid white;
-        position: relative;
-        z-index: 2;
-        color: white;
-        mix-blend-mode: difference;
-        font-size: 12px;
-    }
-
-    .row-work ul a h1 {
-        font-size: 12px;
-        mix-blend-mode: difference;
-    }
-
-    .row-work ul a p {
-        color: white;
-        mix-blend-mode: difference;
-        font-size: 12px;
-    }
-    #loop-container3 {
-        margin-top: 20px;
-    }
-    .socials {
-        margin-top: 50px;
-        margin-bottom: 10px;
-    }
-    footer {
-        font-size: 8px;
-    }
 }

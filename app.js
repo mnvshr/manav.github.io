@@ -1,3 +1,5 @@
+
+
 function valueSetters() {
     gsap.set("#home .parent .child", { y: "100%" })
 }
@@ -109,90 +111,90 @@ function animateHomepage() {
         })
 }
 
-function heading() {
-    class LoopingElement {
-        constructor(element, currentTranslation, speed) {
-            this.element = element;
-            this.currentTranslation = currentTranslation;
-            this.speed = speed;
-            this.metric = 100;
-            this.direction = true;
-            this.scrollTop = 0;
 
-            this.lerp = {
-                current: this.currentTranslation,
-                target: this.currentTranslation,
-                factor: 0.2,
-            };
+// Variables
+const el = document.querySelector(".item1");
+const el2 = document.querySelector(".item2");
+const el3 = document.querySelector(".item3");
 
-            this.events();
-            this.render();
-        }
+// Variables ~ Widths
+let elWidth = el.offsetWidth;
+let windowWidth = window.innerWidth;
 
-        events() {
-            window.addEventListener("scroll", (e) => {
-                let direction = window.pageYOffset || document.documentElement.scrollTop;
+// Variables ~ Mouse
+let mouseX = 0;
+let prevMouseX = 0;
 
-                if (direction > this.scrollTop) {
-                    this.direction = true;
-                    this.lerp.target += this.speed * 10;
-                } else {
-                    this.direction = false;
-                    this.lerp.target -= this.speed * 10;
-                }
-                this.scrollTop = direction <= 0 ? 0 : direction;
-            });
-        }
+// Target: value we want to animate to
+let skewTarget = 0;
+let translateTarget = 0;
 
-        lerpFunc(current, target, factor) {
-            this.lerp.current = current * (1 - factor) + target * factor;
-        }
+// WithEasing: value we use to animate
+let skewWithEasing = 0;
+let translateWithEasing = 0;
 
-        right() {
-            this.lerp.target += this.speed;
-            if (this.lerp.target > this.metric) {
-                this.lerp.current -= this.metric * 2;
-                this.lerp.target -= this.metric * 2;
-            }
-        }
+// EasingFactor: determines how quick the animation/interpolation goes
+let skewEasingFactor = 0.1;
+let translateEasingFactor = 0.1;
 
-        left() {
-            this.lerp.target -= this.speed;
-            if (this.lerp.target < -this.metric) {
-                this.lerp.current -= -this.metric * 2;
-                this.lerp.target -= -this.metric * 2;
-            }
-        }
+// Events
+window.addEventListener("mousemove", handleMouseMove);
+window.addEventListener("resize", handleWindowResize);
 
-        animate() {
 
-            this.direction ? this.right() : this.left();
-
-            this.lerpFunc(this.lerp.current, this.lerp.target, this.lerp.factor);
-            this.element.style.transform = `translateX(${this.lerp.current}%)`;
-        }
-
-        render() {
-            this.animate();
-            window.requestAnimationFrame(() => this.render());
-        }
-    }
-
-    let element1 = document.querySelectorAll(".item1");
-
-    new LoopingElement(element1[0], 0, 0.04);
-    new LoopingElement(element1[1], -100, 0.04);
-
-    let element2 = document.querySelectorAll(".item2");
-
-    new LoopingElement(element2[0], 0, 0.04);
-    new LoopingElement(element2[1], -100, 0.04);
-
-    let element3 = document.querySelectorAll(".item3");
-
-    new LoopingElement(element3[0], 0, 0.04);
-    new LoopingElement(element3[1], -100, 0.04);
+// Functions
+function handleMouseMove(e) {
+    mouseX = e.pageX;
 }
+
+function handleWindowResize(e) {
+    elWidth = el.offsetWidth;
+    windowWidth = window.innerWidth;
+}
+
+function lerp(start, end, factor) {
+    return (1 - factor) * start + factor * end;
+}
+
+function animateMe() {
+    // Get difference between current and previous mouse position
+    skewTarget = mouseX - prevMouseX;
+    prevMouseX = mouseX;
+
+    // Calc how much we need to translate our el
+    translateTarget = (elWidth - windowWidth) / windowWidth * mouseX * -1;
+
+    // Ease between start and target values (skew)
+    skewWithEasing = lerp(skewWithEasing, skewTarget, skewEasingFactor);
+
+    // Limit our skew to a range of 75 degrees so it doesn't "over-skew"
+    skewWithEasing = Math.min(Math.max(parseInt(skewWithEasing), -75), 75);
+
+    // Ease between start and target values (translate)
+    translateWithEasing = lerp(
+        translateWithEasing,
+        translateTarget,
+        translateEasingFactor);
+
+
+    el.style.transform = `
+    translateX(${translateWithEasing}px)
+    skewX(${skewWithEasing}deg)
+  `;
+    el2.style.transform = `
+    translateX(${translateWithEasing}px)
+    skewX(${skewWithEasing}deg)
+  `;
+    el3.style.transform = `
+    translateX(${translateWithEasing}px)
+    skewX(${skewWithEasing}deg)
+  `;
+
+    // RAF
+    window.requestAnimationFrame(animateMe);
+}
+
+window.requestAnimationFrame(animateMe);
 
 function cursor() {
     let innerCursor = document.querySelector(".inner-cursor");
