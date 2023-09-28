@@ -113,21 +113,18 @@ li {
   top: 0;
   margin-bottom: 4vh;
   z-index: 10;
-  mix-blend-mode: difference;
 }
 
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5vw;
   width: 100vw;
   height: 100px;
   position: fixed;
   opacity: 0;
   top: 0;
   z-index: 9;
-  margin-bottom: 4vh;
   background-color: rgb(14, 14, 14);
 }
 
