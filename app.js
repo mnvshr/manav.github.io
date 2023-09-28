@@ -80,6 +80,11 @@ function loaderAnimation() {
     .from("#loop-container2", {
       opacity: 0,
       delay: 0.5,
+    })
+
+    .from("#loop-container3", {
+      opacity: 0,
+      delay: 0.5,
     });
 }
 
@@ -102,9 +107,23 @@ function animateHomepage() {
       duration: 1.5,
       ease: Expo.easeInOut,
     })
-    .to(".photo", {
+    .to(".photo1", {
       opacity: 100,
       x: -100,
+      delay: -1.2,
+      duration: 3,
+      ease: Expo.easeInOut,
+    })
+    .to(".photo2", {
+      opacity: 100,
+      y: 100,
+      delay: -1.2,
+      duration: 3,
+      ease: Expo.easeInOut,
+    })
+    .to(".photo3", {
+      opacity: 100,
+      y: -80,
       delay: -1.2,
       duration: 3,
       ease: Expo.easeInOut,
