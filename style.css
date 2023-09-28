@@ -441,3 +441,10 @@ footer {
     /* transition: 0.08s; */
     z-index: 10;
 }
+@media only screen and (max-wdth: 700px) {
+  .inner-cursor {
+    display: none;
+  }
+  .outer-cursor {
+    display: none;
+  }
