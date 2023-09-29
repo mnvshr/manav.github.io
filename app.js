@@ -64,8 +64,8 @@ function loaderAnimation() {
       overflow: "",
     })
 
-    .from("#loop-container1", {
-      opacity: 0,
+    .from("#container1", {
+      opacity: 1,
       delay: 0.5,
     })
 
@@ -77,12 +77,12 @@ function loaderAnimation() {
       ease: Expo.easeInOut,
     })
 
-    .from("#loop-container2", {
+    .from("#container2", {
       opacity: 0,
       delay: 0.5,
     })
 
-    .from("#loop-container3", {
+    .from("#container3", {
       opacity: 0,
       delay: 0.5,
     });

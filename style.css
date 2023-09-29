@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400;1,600&display=swap");
 
 * {
     box-sizing: border-box;
@@ -73,7 +73,6 @@ li {
     text-transform: lowercase;
     font-size: 24px;
     font-family: "EB Garamond", serif;
-    font-weight: 600;
 }
 
 #base_black h1 {
@@ -214,12 +213,9 @@ li {
     z-index: 3;
 }
 
-/* #loop-container1 {
-    margin-top: 12vh;
-    white-space: nowrap;
-    user-select: none;
-    font-style: italic;
-    font-size: 4vw;
+/* #container1 {
+    display: flex;
+    justify-content: center;
 } */
 
 .item1 {
@@ -242,13 +238,12 @@ li {
 }
 
 #horizontal-img {
-    margin: auto;
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin-top: 64px;
-    width: 40vw;
+    width: 100vw;
     height: 30vh;
-    background-color: #4e98d4;
-    background-image: url(./images/img5.jpg);
     filter: grayscale();
     background-size: cover;
 }
@@ -290,6 +285,7 @@ li {
 .accent {
     font-family: "EB Garamond", serif;
     color: rgb(201, 117, 243);
+    font-style: normal;
 }
 
 .regular {
@@ -321,12 +317,9 @@ section {
     height: 200px;
 }
 
-/* #loop-container2 {
-    margin-top: 12vh;
-    white-space: nowrap;
-    user-select: none;
-    font-style: italic;
-    font-size: 4vw;
+/* #container2 {
+    display: flex;
+    justify-content: center;
 } */
 
 .item2 {
@@ -340,12 +333,9 @@ section {
     position: absolute;
 }
 
-/* #loop-container3 {
-    margin-top: 12vh;
-    white-space: nowrap;
-    user-select: none;
-    font-style: italic;
-    font-size: 4vw;
+/* #container3 {
+    display: flex;
+    justify-content: center;
 } */
 
 .item3 {
@@ -417,7 +407,6 @@ section {
     padding: 0 5vw;
     margin-top: 25vh;
     margin-bottom: 10vh;
-
     text-align: center;
 }
 
@@ -429,6 +418,7 @@ section {
 
 .socials h1 a {
     font-size: 6vw;
+    font-style: italic;
 }
 
 .mail {
@@ -517,10 +507,130 @@ footer {
     /* transition: 0.08s; */
     z-index: 10;
 }
-@media screen and (max-wdth: 768px) {
+
+@media (max-width: 500px) {
+    #nav a {
+        font-size: 12px;
+    }
+
+    .row h1 {
+        user-select: none;
+        font-weight: 300;
+        color: white;
+        font-size: 16vw;
+        z-index: 2;
+        mix-blend-mode: difference;
+    }
+
+    .row h5 {
+        user-select: none;
+        font-weight: 300;
+        color: white;
+        font-size: 3vw;
+        text-align: end;
+    }
+
+    .images {
+        width: 50vw;
+        height: 30vw;
+        margin-top: 40px;
+        margin-left: 160px;
+    }
+
+    .photo1 {
+        width: 40vw;
+        height: 50vw;
+    }
+
+    .photo2 {
+        margin-top: -60vw;
+        width: 30vw;
+        height: 40vw;
+    }
+
+    .photo3 {
+        margin-top: -34vw;
+        width: 32vw;
+        height: 18vw;
+    }
+
+    .item1 {
+        font-size: 6vw;
+    }
+
+    .item2 {
+        margin-top: 6vh;
+        font-size: 6vw;
+    }
+
+    .item3 {
+        margin-top: 6vh;
+        font-size: 6vw;
+    }
+
+    .left-about {
+        width: 80vw;
+        margin-top: -42px;
+    }
+
+    .left-about p {
+        font-size: 4vw;
+    }
+
+    .right-about {
+        width: 65vw;
+        margin-top: -42px;
+    }
+
+    .right-about p {
+        font-size: 4vw;
+    }
+
+    #horizontal-img {
+        display: flex;
+        justify-content: center;
+        height: 16vh;
+    }
+
+    .row-work {
+        margin-top: 12vh;
+    }
+
+    .row-work ul a h1 {
+        font-size: 3vw;
+    }
+
+    .row-work ul a p {
+        font-size: 3vw;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .socials {
+        margin-top: 12vh;
+        margin-bottom: 0;
+    }
+
+    .socials h1 {
+        color: white;
+        font-size: 10vw;
+        font-weight: 300;
+    }
+
+    .socials h1 a {
+        font-size: 18vw;
+        font-style: italic;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 3vw;
+    }
+
     .inner-cursor {
         display: none;
     }
+
     .outer-cursor {
         display: none;
     }
